@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Analytics at scale</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.min.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.3.0/mapbox-gl-geocoder.css' type='text/css' />
+
+
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<style>
+    #menu {
+        position: absolute;
+        background: #fff;
+        padding: 10px;
+        font-family: 'Open Sans', sans-serif;
+    }
+</style>
+
+<div id='map'></div>
+<div id='menu'>
+    <input id='building_area' type='radio' name='rtoggle' value='building_area' checked='checked'>
+    <label for='building_area'>building area</label>
+    <input id='streets' type='radio' name='rtoggle' value='streets'>
+    <label for='streets'>streets</label>
+    <input id='bright' type='radio' name='rtoggle' value='bright'>
+    <label for='bright'>bright</label>
+    <input id='light' type='radio' name='rtoggle' value='light'>
+    <label for='light'>light</label>
+    <input id='dark' type='radio' name='rtoggle' value='dark'>
+    <label for='dark'>dark</label>
+    <input id='satellite' type='radio' name='rtoggle' value='satellite'>
+    <label for='satellite'>satellite</label>
+</div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1Ijoic2V2YW1vbyIsImEiOiJjamUzM2N5ZWQyZms3MnJzNmJtOGprbDlkIn0.fGd1eu_9xugbpQLGemzEvw';
+
+
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/sevamoo/cjnue2mgl36022snnuhe5za14',
+    zoom: 5,
+    center: [-99.582549, 40.371659]
+});
+
+map.addControl(new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken
+}));
+
+
+var layerList = document.getElementById('menu');
+var inputs = layerList.getElementsByTagName('input');
+
+function switchLayer(layer) {
+    var layerId = layer.target.id;
+
+    
+
+    switch(layerId){
+
+        case 'building_area':
+            console.log(layerId);
+            map.setStyle('mapbox://styles/sevamoo/cjnue2mgl36022snnuhe5za14');
+            map.setZoom(10)
+            map.flyTo({
+            center: [
+
+// -171.791110603, 18.91619, -66.96466, 71.3577635769
+
+                -99.582549 + (Math.random() - 0.5) * 8,
+                40.371659 + (Math.random() - 0.5) * 8]
+            });
+            break;
+        case 'streets':
+            console.log(layerId);
+            console.log('I was here');
+            map.setStyle('mapbox://styles/sevamoo/cix64z4rs008i2qnv5fv2sqmn');
+            map.setZoom(10)
+            map.flyTo({
+            center: [
+                -74.50 + (Math.random() - 0.5) * 10,
+                40 + (Math.random() - 0.5) * 10]
+            });
+            break;
+
+        default:
+            console.log('default');
+            map.setStyle('mapbox://styles/mapbox/' + layerId + '-v9');
+
+    }
+    
+}
+
+for (var i = 0; i < inputs.length; i++) {
+    inputs[i].onclick = switchLayer;
+}
+</script>
+
+</body>
+</html>
