@@ -49,7 +49,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic2V2YW1vbyIsImEiOiJjamUzM2N5ZWQyZms3MnJzNmJtO
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/sevamoo/cjnue2mgl36022snnuhe5za14',
-    zoom: 5,
+    zoom: 3,
     center: [-99.582549, 40.371659]
 });
 
@@ -71,7 +71,7 @@ function switchLayer(layer) {
         case 'building_area':
             console.log(layerId);
             map.setStyle('mapbox://styles/sevamoo/cjnue2mgl36022snnuhe5za14');
-            map.setZoom(10)
+            map.setZoom(9)
             map.flyTo({
             center: [
 
@@ -85,7 +85,7 @@ function switchLayer(layer) {
             console.log(layerId);
             console.log('I was here');
             map.setStyle('mapbox://styles/sevamoo/cix64z4rs008i2qnv5fv2sqmn');
-            map.setZoom(10)
+            map.setZoom(9)
             map.flyTo({
             center: [
                 -99.582549 + (Math.random() - 0.5) * 12,
