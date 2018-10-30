@@ -35,14 +35,14 @@
     <label for='orient_v1'>orientation along the first axis</label>
     <input id='orient_v2' type='radio' name='rtoggle' value='orient_v2'>
     <label for='orient_v2'>orientation along the second axis</label>
-    <input id='bright' type='radio' name='rtoggle' value='bright'>
-    <label for='bright'>bright</label>
-    <input id='light' type='radio' name='rtoggle' value='light'>
-    <label for='light'>light</label>
+    <input id='density' type='radio' name='rtoggle' value='density'>
+    <label for='density'>Building density</label>
+    <!-- <input id='light' type='radio' name='rtoggle' value='light'>
+    <label for='light'>light</label> -->
     <input id='dark' type='radio' name='rtoggle' value='dark'>
     <label for='dark'>dark</label>
-    <input id='satellite' type='radio' name='rtoggle' value='satellite'>
-    <label for='satellite'>satellite</label>
+    <!-- <input id='satellite' type='radio' name='rtoggle' value='satellite'>
+    <label for='satellite'>satellite</label> -->
 </div>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1Ijoic2V2YW1vbyIsImEiOiJjamUzM2N5ZWQyZms3MnJzNmJtOGprbDlkIn0.fGd1eu_9xugbpQLGemzEvw';
@@ -111,6 +111,22 @@ function switchLayer(layer) {
             //     40.371659 + (Math.random() - 0.5) * 12]
             // });
             break;
+
+        case 'density':
+            console.log(layerId);
+            console.log('I was here');
+            map.setStyle('mapbox://styles/sevamoo/cjnvoech501lv2rlcyzho92sa');
+            // map.setZoom(9)
+            // map.setCenter(center)
+            // map.flyTo({
+            // center: [
+            //     -99.582549 + (Math.random() - 0.5) * 12,
+            //     40.371659 + (Math.random() - 0.5) * 12]
+            // });
+            break;
+
+
+            
 
         default:
             console.log('default');
