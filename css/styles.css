@@ -1,0 +1,356 @@
+/*-----Written by KOMPYLE TECHNOLOGIES-------*/
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 50px;
+}
+.side{
+    padding: 15px;
+    width:100%;
+    background: #ccc;
+    text-align: left;
+}
+.side-focus{
+    color: #fff;
+        transition: All 0.3s ease-in;
+    -webkit-transition: All 0.3s ease-in;
+    -moz-transition: All 0.3s ease-in;
+    -o-transition: All 0.3s ease-in;
+}
+.side1,
+.side2{
+    border-bottom: 1px solid #ccc;
+}
+.side_third{
+    padding: 11px;
+    width:100%;
+    color: #fff;
+    text-align: left;
+}
+.nopadding{
+    padding: 0px;
+}
+.input-group-addon{
+    border-radius: 0px;
+}
+.input-group-addon-focus{
+    color: #fff;
+        transition: All 0.3s ease-in;
+    -webkit-transition: All 0.3s ease-in;
+    -moz-transition: All 0.3s ease-in;
+    -o-transition: All 0.3s ease-in;
+}
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0px;
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    position: relative;
+}
+#msform fieldset:not(:first-of-type) {
+    display: none;
+}
+#msform input, #msform textarea , .analysis input {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #262626;
+    font-size: 13px;
+}
+#msform input:focus, #msform textarea:focus, .analysis input:focus {
+    border: 1px solid #000;
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline-width: 0;
+    transition: All 0.5s ease-in;
+    -webkit-transition: All 0.5s ease-in;
+    -moz-transition: All 0.5s ease-in;
+    -o-transition: All 0.5s ease-in;
+}
+#msform .action-button {
+    font-family: montserrat;
+    width: 100px;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+                transition: All 0.3s ease-in;
+    -webkit-transition: All 0.3s ease-in;
+    -moz-transition: All 0.3s ease-in;
+    -o-transition: All 0.3s ease-in;
+}
+.analysis label{
+    color: #fff;
+    margin-bottom: 0px;
+}
+.analysis{
+    margin-bottom: 0px;
+}
+.analysis input{
+    border-left-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 2px;
+}
+.btn-custom {
+    width: 100px;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+#msform .action-button-previous {
+    width: 100px;
+    background: #737373;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+                transition: All 0.3s ease-in;
+    -webkit-transition: All 0.3s ease-in;
+    -moz-transition: All 0.3s ease-in;
+    -o-transition: All 0.3s ease-in;
+}
+#msform .action-button-previous:hover, #msform .action-button-previous:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #737373;
+}
+.fs-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.fs-subtitle {
+    font-weight: normal;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+#progressbar {
+    margin-top: 30px;
+    overflow: hidden;
+    counter-reset: step;
+}
+#progressbar li {
+    list-style-type: none;
+    text-transform: uppercase;
+    font-size: 9px;
+    width: 33.33%;
+    float: left;
+    position: relative;
+    letter-spacing: 1px;
+}
+#progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 24px;
+    height: 24px;
+    line-height: 26px;
+    display: block;
+    font-size: 12px;
+    color: #333;
+    background: #eee;
+    border-radius: 25px;
+    margin: 0 auto 10px auto;
+}
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #eee;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    z-index: -1;
+}
+#progressbar li:first-child:after {
+    content: none;
+}
+#progressbar li.active:before, #progressbar li.active:after {
+    color: white;
+}
+.quantity {
+  position: relative;
+  padding-bottom: 15px;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button
+{
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number]
+{
+  -moz-appearance: textfield;
+}
+.quantity input {
+
+  height: 42px;
+  line-height: 1.65;
+  float: left;
+  display: block;
+  padding: 0px !important;
+  margin: 0;
+  padding-left: 20px !important;
+  border: 1px solid #000;
+}
+.quantity input:focus {
+  outline: 0;
+}
+.quantity-nav {
+  float: left;
+  position: relative;
+  height: 42px;
+}
+.quantity-button {
+  position: relative;
+  cursor: pointer;
+  border-left: 1px solid #eee;
+  width: 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 13px;
+  font-family: "Trebuchet MS", Helvetica, sans-serif !important;
+  line-height: 1.7;
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.quantity-button.quantity-up {
+  position: absolute;
+  height: 50%;
+  top: 0;
+  border-bottom: 1px solid #eee;
+}
+.quantity-button.quantity-down {
+  position: absolute;
+  bottom: -1px;
+  height: 50%;
+}
+#locationField, #controls {
+    position: relative;
+}#autocomplete {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 99%;
+}
+.label {
+    text-align: right;
+    font-weight: bold;
+    width: 100px;
+    color: #303030;
+}
+#address {
+    border: 1px solid #000;
+    background-color: #f0f0ff;
+    width: 480px;
+    padding-right: 2px;
+}
+#address td {
+    font-size: 10pt;
+}
+.field {
+    width: 99%;
+}
+.slimField {
+    width: 80px;
+}
+.wideField {
+    width: 200px;
+}
+#locationField {
+    margin-bottom: 2px;
+}
+.select{
+    margin-bottom: 30px;
+}
+.select-styled,
+.select-options{
+    display: none;
+}
+#estimate{
+    padding-right: 0px !important;
+}
+#progressbar{
+    padding-left: 0px;
+}
+/*---------Change Color Scheme Here-------*/
+.side-focus,
+.quantity-button,
+#progressbar li.active:before, #progressbar li.active:after,
+.side-focus,
+.side_third,
+.input-group-addon-focus,
+#msform .action-button,
+.analysis label,
+.btn-custom{
+    background: #386890 !important;
+}
+
+
+.quantity input,
+.side-focus,
+.side_third,
+.input-group-addon-focus,
+#msform input:focus, #msform textarea:focus , .analysis input{
+  border-color:  #386890 !important;
+}
+#msform .action-button:hover, #msform .action-button:focus, .btn-custom {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #386890;
+}
+.fs-title,
+.modal-title,
+.cs-skin-underline > span::after {
+    color: #386890;
+}
+
+li[data-value=""]{
+    display: none;
+}
+@media only screen and (max-width:900px) and (min-width:769px){
+    #msform fieldset{
+        padding-left: 0px;
+        padding-right: 0px;
+        margin: 0px 5%;
+        width: 90%;
+    }
+}
+@media only screen and (max-width:768px){
+    #msform fieldset{
+        padding-left: 0px;
+        padding-right: 0px;
+        margin: 0px;
+        width: 100%;
+    }
+    label{
+        margin-bottom: 0px;
+    }
+    .r-mb-10{
+        margin-bottom: 10px;
+    }
+}

@@ -15,6 +15,8 @@
         body { margin:0; padding:0; }
         #map { position:absolute; top:0; bottom:0; width:100%; }
     </style>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
@@ -29,19 +31,32 @@
 
 <div id='map'></div>
 <div id='menu'>
-    <input id='density' type='radio' name='rtoggle' value='density'>
-    <label for='density'>Building density</label>
-    <input id='building_area' type='radio' name='rtoggle' value='building_area' checked='checked'>
+    <div>
+    <input id='density' type='radio' name='rtoggle' value='density' checked='checked'>
+    <label for='density'>Building density</label>    
+    </div>
+    <div>
+        <input id='building_area' type='radio' name='rtoggle' value='building_area' >
     <label for='building_area'>Building area</label>
-    <input id='orient_v1' type='radio' name='rtoggle' value='orient_v1'>
-    <label for='orient_v1'>Orientation along the first axis</label>
-    <input id='orient_v2' type='radio' name='rtoggle' value='orient_v2'>
-    <label for='orient_v2'>Orientation along the second axis</label>
+    </div>
+    <div>
+     <input id='orient_v1' type='radio' name='rtoggle' value='orient_v1'>
+    <label for='orient_v1'>Orientation along the first axis</label>   
+    </div>
+    <div>
+       <input id='orient_v2' type='radio' name='rtoggle' value='orient_v2'>
+    <label for='orient_v2'>Orientation along the second axis</label> 
+    </div>
+    <div></div>
+
+    
+    
+    
     
     <!-- <input id='light' type='radio' name='rtoggle' value='light'>
     <label for='light'>light</label> -->
-    <input id='dark' type='radio' name='rtoggle' value='dark'>
-    <label for='dark'>dark</label>
+    <!-- <input id='dark' type='radio' name='rtoggle' value='dark'> -->
+    <!-- <label for='dark'>dark</label> -->
     <!-- <input id='satellite' type='radio' name='rtoggle' value='satellite'>
     <label for='satellite'>satellite</label> -->
 </div>
@@ -52,23 +67,26 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic2V2YW1vbyIsImEiOiJjamUzM2N5ZWQyZms3MnJzNmJtO
 var map = new mapboxgl.Map({
     attributionControl: false,
     container: 'map',
-    style: 'mapbox://styles/sevamoo/cjnuv5oj631yy2sofi28fra4n',
-    zoom: 10.5,
+    style: 'mapbox://styles/sevamoo/cjnvtkh5w618e2snw830d2mpl',
+    zoom: 4,
     center: [-122.231297,37.673972],
-    // center: [-98.582549, 37.771659],
+    center: [-98.582549, 37.771659],
     pitch: 50, // pitch in degrees
     bearing: 0 // bearing in degrees
 });
 
-map.addControl(new MapboxGeocoder({
-    accessToken: mapboxgl.accessToken
-}));
+
+
+// map.addControl(new MapboxGeocoder({
+//     accessToken: mapboxgl.accessToken
+// }));
 
 map.addControl(new mapboxgl.AttributionControl({
         compact: false,
         customAttribution: '<a href="https://twitter.com/sevamoo"> @Vahid Moosavi, ETHZ</a>'
     }));
 
+map.addControl(new mapboxgl.NavigationControl());
 
 var layerList = document.getElementById('menu');
 var inputs = layerList.getElementsByTagName('input');
