@@ -30,11 +30,11 @@
 <div id='map'></div>
 <div id='menu'>
     <input id='building_area' type='radio' name='rtoggle' value='building_area' checked='checked'>
-    <label for='building_area'>building area</label>
+    <label for='building_area'>Building area</label>
     <input id='orient_v1' type='radio' name='rtoggle' value='orient_v1'>
-    <label for='orient_v1'>orientation along the first axis</label>
+    <label for='orient_v1'>Orientation along the first axis</label>
     <input id='orient_v2' type='radio' name='rtoggle' value='orient_v2'>
-    <label for='orient_v2'>orientation along the second axis</label>
+    <label for='orient_v2'>Orientation along the second axis</label>
     <input id='density' type='radio' name='rtoggle' value='density'>
     <label for='density'>Building density</label>
     <!-- <input id='light' type='radio' name='rtoggle' value='light'>
@@ -49,6 +49,7 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic2V2YW1vbyIsImEiOiJjamUzM2N5ZWQyZms3MnJzNmJtO
 
 
 var map = new mapboxgl.Map({
+    attributionControl: false,
     container: 'map',
     style: 'mapbox://styles/sevamoo/cjnuv5oj631yy2sofi28fra4n',
     zoom: 10.5,
@@ -61,6 +62,11 @@ var map = new mapboxgl.Map({
 map.addControl(new MapboxGeocoder({
     accessToken: mapboxgl.accessToken
 }));
+
+map.addControl(new mapboxgl.AttributionControl({
+        compact: false,
+        customAttribution: '<a href="https://twitter.com/sevamoo"> @Vahid Moosavi, ETHZ</a>'
+    }));
 
 
 var layerList = document.getElementById('menu');
@@ -115,7 +121,7 @@ function switchLayer(layer) {
         case 'density':
             console.log(layerId);
             console.log('I was here');
-            map.setStyle('mapbox://styles/sevamoo/cjnvoech501lv2rlcyzho92sa');
+            map.setStyle('mapbox://styles/sevamoo/cjnvt3xf710a72sjre50fg6nt');
             // map.setZoom(9)
             // map.setCenter(center)
             // map.flyTo({
