@@ -34,22 +34,25 @@
 <div id='menu'>
     <div>
     <input id='density' type='radio' name='rtoggle' value='density' checked='checked'>
-    <label for='density'>Building density</label>    
+    <label for='density'>Building density (US)</label>    
     </div>
     <div>
         <input id='building_area' type='radio' name='rtoggle' value='building_area' >
-    <label for='building_area'>Building area</label>
+    <label for='building_area'>Building area (US</label>
     </div>
     <div>
      <input id='orient_v1' type='radio' name='rtoggle' value='orient_v1'>
-    <label for='orient_v1'>Orientation along the first axis</label>   
+    <label for='orient_v1'>Orientation along the first axis (US)</label>   
     </div>
     <div>
        <input id='orient_v2' type='radio' name='rtoggle' value='orient_v2'>
-    <label for='orient_v2'>Orientation along the second axis</label> 
+    <label for='orient_v2'>Orientation along the second axis (US)</label> 
     </div>
-    <div></div>
-
+    
+    <div>
+       <input id='transport' type='radio' name='rtoggle' value='transport'>
+    <label for='transport'>Public transport accessiblity (planet)</label> 
+    </div>
     
     
     
@@ -151,6 +154,18 @@ function switchLayer(layer) {
             // });
             break;
 
+            //Planet
+            case 'transport':
+                console.log(layerId);
+                map.setStyle('mapbox://styles/sevamoo/cjo0084971kf72sqlcd33sxkl');
+                //map.setZoom(9)
+                //map.setCenter(center)
+                map.flyTo({
+                    center: [9.226,46.625],
+                    zoom: 3.5
+                
+                });
+            break;
 
             
 
