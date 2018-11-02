@@ -102,7 +102,7 @@ var map = new mapboxgl.Map({
     zoom: 4,
     center: [-122.231297,37.673972],
     center: [-98.582549, 37.771659],
-    pitch: 40, // pitch in degrees
+    pitch: 35, // pitch in degrees
     bearing: 0 // bearing in degrees
 });
 
@@ -209,7 +209,7 @@ function switchLayer(layer) {
 
             case 'POW_individual':
                 console.log(layerId);
-                map.setStyle('mapbox://styles/sevamoo/cjo058oqj1aca2snn540hywl6');
+                map.setStyle('mapbox://styles/sevamoo/cjo05rs5l2sg52rp6yqoyp914');
                 //map.setZoom(9)
                 //map.setCenter(center)
                 map.flyTo({
