@@ -33,28 +33,55 @@
 <div id='map' ></div>
 <div id='menu'>
     <div>
-    <input id='density' type='radio' name='rtoggle' value='density' checked='checked'>
-    <label for='density'>Building density (US)</label>    
-    </div>
-    <div>
-        <input id='building_area' type='radio' name='rtoggle' value='building_area' >
-    <label for='building_area'>Building area (US</label>
-    </div>
-    <div>
-     <input id='orient_v1' type='radio' name='rtoggle' value='orient_v1'>
-    <label for='orient_v1'>Orientation along the first axis (US)</label>   
-    </div>
-    <div>
-       <input id='orient_v2' type='radio' name='rtoggle' value='orient_v2'>
-    <label for='orient_v2'>Orientation along the second axis (US)</label> 
+        <label>Building Analytics for the US </label> 
+        
+        <div>
+            <input id='density' type='radio' name='rtoggle' value='density' checked='checked'>
+            <label for='density'>Density</label>    
+        </div>
+        <div>
+            <input id='building_area' type='radio' name='rtoggle' value='building_area' >
+            <label for='building_area'>Footprint size</label>
+        </div>
+        <div>
+            <input id='orient_v1' type='radio' name='rtoggle' value='orient_v1'>
+            <label for='orient_v1'>Orientation along the first axis</label>   
+        </div>
+        <div>
+           <input id='orient_v2' type='radio' name='rtoggle' value='orient_v2'>
+            <label for='orient_v2'>Orientation along the second axis</label> 
+        </div>
     </div>
     
-    <div>
-       <input id='transport' type='radio' name='rtoggle' value='transport'>
-    <label for='transport'>Public transport accessiblity (planet)</label> 
+    
+
+    <hr>
+
+     <div>
+        <label>Building Analytics for the planet </label> 
+        <div>
+            <input id='transport' type='radio' name='rtoggle' value='transport'>
+            <label for='transport'>Access to transport infrastructure</label> 
+        </div>
+
+        <div>
+            <input id='POW' type='radio' name='rtoggle' value='POW'>
+            <label for='POW'> Access to places of worship (All religious points together)</label> 
+        </div>
+
+        <div>
+            <input id='POW_individual' type='radio' name='rtoggle' value='POW_individual'>
+            <label for='POW_individual'> Access to places of worship (All religious points different colors)</label> 
+        </div>
+
+
+
+        <!-- <div>
+            <input id='POW' type='radio' name='rtoggle' value='POW'>
+            <label for='POW'><a href="https://twitter.com/sevamoo" target="_blank"> Access to places of worship (All religions)</a></label> 
+        </div>
+     -->
     </div>
-    
-    
     
     
     <!-- <input id='light' type='radio' name='rtoggle' value='light'>
@@ -75,7 +102,7 @@ var map = new mapboxgl.Map({
     zoom: 4,
     center: [-122.231297,37.673972],
     center: [-98.582549, 37.771659],
-    pitch: 50, // pitch in degrees
+    pitch: 40, // pitch in degrees
     bearing: 0 // bearing in degrees
 });
 
@@ -166,6 +193,33 @@ function switchLayer(layer) {
                 
                 });
             break;
+
+            case 'POW':
+                console.log(layerId);
+                map.setStyle('mapbox://styles/sevamoo/cjnzxlyp804se2rpodtcibzo4');
+                //map.setZoom(9)
+                //map.setCenter(center)
+                map.flyTo({
+                    center: [9.226,46.625],
+                    zoom: 3.5
+                
+                });
+            break;
+
+
+            case 'POW_individual':
+                console.log(layerId);
+                map.setStyle('mapbox://styles/sevamoo/cjo058oqj1aca2snn540hywl6');
+                //map.setZoom(9)
+                //map.setCenter(center)
+                map.flyTo({
+                    center: [9.226,46.625],
+                    zoom: 3.5
+                
+                });
+            break;
+
+
 
             
 
