@@ -73,6 +73,11 @@
             <label for='POW_individual'> Access to places of worship (With different colors)</label> 
         </div>
 
+        <div>
+            <input id='buildings_OSM' type='radio' name='rtoggle' value='buildings_OSM'>
+            <label for='buildings_OSM'> All the buildings (From OpenStreetMap)</label> 
+        </div>
+
 
 
         <!-- <div>
@@ -209,6 +214,18 @@ function switchLayer(layer) {
             case 'POW_individual':
                 console.log(layerId);
                 map.setStyle('mapbox://styles/sevamoo/cjo05rs5l2sg52rp6yqoyp914');
+                //map.setZoom(9)
+                //map.setCenter(center)
+                map.flyTo({
+                    center: [9.226,46.625],
+                    zoom: 3.5
+                
+                });
+            break;
+
+            case 'buildings_OSM':
+                console.log(layerId);
+                map.setStyle('mapbox://styles/sevamoo/cjo3a3wwe0j9l2snmpfgx2dg8');
                 //map.setZoom(9)
                 //map.setCenter(center)
                 map.flyTo({
