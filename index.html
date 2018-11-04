@@ -67,7 +67,7 @@
         <label id="LL2">Building Analytics for the planet (From <a href="https://www.openstreetmap.org" target="_blank"> OpenStreetMap</a>)</label> 
         
         <div>
-            <input id='buildings_OSM' type='radio' name='rtoggle' value='buildings_OSM'>
+            <input id='buildings_OSM' type='radio' name='rtoggle' value='buildings_OSM' checked='checked'>
             <label for='buildings_OSM'> All the buildings </label> 
         </div>
 
@@ -91,7 +91,7 @@
         <label id="LL1">Building Analytics for the US (From <a href="https://github.com/Microsoft/USBuildingFootprints" target="_blank"> Microsoft</a>) </label> 
         
         <div>
-            <input id='density' type='radio' name='rtoggle' value='density' checked='checked'>
+            <input id='density' type='radio' name='rtoggle' value='density' >
             <label for='density'>Density</label>    
         </div>
         <div>
@@ -131,19 +131,20 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoic2V2YW1vbyIsImEiOiJjamUzM2N5ZWQyZms3MnJzNmJtO
 var map = new mapboxgl.Map({
     attributionControl: false,
     container: 'map',
-    style: 'mapbox://styles/sevamoo/cjnvtkh5w618e2snw830d2mpl',
-    zoom: 4,
+    style: 'mapbox://styles/sevamoo/cjo3a3wwe0j9l2snmpfgx2dg8',
+    zoom: 1.8,
     center: [-122.231297,37.673972],
     center: [-98.582549, 37.771659],
+    center: [9.226,46.625],
     pitch: 35, // pitch in degrees
     bearing: 0 // bearing in degrees
 });
 
 
 
-// map.addControl(new MapboxGeocoder({
-//     accessToken: mapboxgl.accessToken
-// }));
+map.addControl(new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken
+}));
 
 map.addControl(new mapboxgl.AttributionControl({
         compact: false,
@@ -207,11 +208,10 @@ function switchLayer(layer) {
             map.setStyle('mapbox://styles/sevamoo/cjnvtkh5w618e2snw830d2mpl');
             // map.setZoom(9)
             // map.setCenter(center)
-            // map.flyTo({
-            // center: [
-            //     -99.582549 + (Math.random() - 0.5) * 12,
-            //     40.371659 + (Math.random() - 0.5) * 12]
-            // });
+            map.flyTo({
+            center: [-98.582549, 37.771659],
+            zoom: 3.5
+            });
             break;
 
             //Planet
@@ -220,11 +220,11 @@ function switchLayer(layer) {
                 map.setStyle('mapbox://styles/sevamoo/cjo0084971kf72sqlcd33sxkl');
                 //map.setZoom(9)
                 //map.setCenter(center)
-                map.flyTo({
-                    center: [9.226,46.625],
-                    zoom: 3.5
+                // map.flyTo({
+                //     center: [9.226,46.625],
+                //     zoom: 3.5
                 
-                });
+                // });
             break;
 
             case 'POW':
@@ -232,24 +232,25 @@ function switchLayer(layer) {
                 map.setStyle('mapbox://styles/sevamoo/cjnzxlyp804se2rpodtcibzo4');
                 //map.setZoom(9)
                 //map.setCenter(center)
-                map.flyTo({
-                    center: [9.226,46.625],
-                    zoom: 3.5
+                // map.flyTo({
+                //     center: [9.226,46.625],
+                //     zoom: 3.5
                 
-                });
+                // });
             break;
 
 
             case 'POW_individual':
                 console.log(layerId);
                 map.setStyle('mapbox://styles/sevamoo/cjo05rs5l2sg52rp6yqoyp914');
-                //map.setZoom(9)
-                //map.setCenter(center)
-                map.flyTo({
-                    center: [9.226,46.625],
-                    zoom: 3.5
+                // map.setZoom(11.5);
+                // var center = [103.822,1.385];
+                // map.setCenter(center);
+                // map.flyTo({
+                //     center: [103.822,1.385],
+                //     zoom: 10.5
                 
-                });
+                // });
             break;
 
             case 'buildings_OSM':
@@ -257,11 +258,11 @@ function switchLayer(layer) {
                 map.setStyle('mapbox://styles/sevamoo/cjo3a3wwe0j9l2snmpfgx2dg8');
                 //map.setZoom(9)
                 //map.setCenter(center)
-                map.flyTo({
-                    center: [9.226,46.625],
-                    zoom: 3.5
+                // map.flyTo({
+                //     center: [9.226,46.625],
+                //     zoom: 3.5
                 
-                });
+                // });
             break;
 
 
