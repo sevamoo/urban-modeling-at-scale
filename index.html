@@ -27,13 +27,68 @@
         padding: 5px;
         font-family: 'Open Sans', sans-serif;
         color: white;
+        font-size: 70%;
+    }
+</style>
+<style>
+    #LL1 {
+        position: relative;
+        background: 'transparent';
+        padding: 5px;
+        font-family: 'Open Sans', sans-serif;
+        color: steelblue;
+        background-color: white;
+        opacity: .8;
+        font-size: 100%;
+    }
+</style>
+
+<style>
+    #LL2 {
+        position: relative;
+        background: 'transparent';
+        padding: 5px;
+        font-family: 'Open Sans', sans-serif;
+        color:steelblue;
+        background-color: white;
+        opacity: .8;
+        font-size: 100%;
     }
 </style>
 
 <div id='map' ></div>
 <div id='menu'>
-    <div>
-        <label>Building Analytics for the US </label> 
+    
+    
+    
+
+
+     <div>
+        <label id="LL2">Building Analytics for the planet (From <a href="https://www.openstreetmap.org" target="_blank"> OpenStreetMap</a>)</label> 
+        
+        <div>
+            <input id='buildings_OSM' type='radio' name='rtoggle' value='buildings_OSM'>
+            <label for='buildings_OSM'> All the buildings </label> 
+        </div>
+
+        <div>
+            <input id='transport' type='radio' name='rtoggle' value='transport'>
+            <label for='transport'>Access to transport infrastructure</label> 
+        </div>
+
+        <div>
+            <input id='POW' type='radio' name='rtoggle' value='POW'>
+            <label for='POW'> Access to places of worship (Heatmap)</label> 
+        </div>
+
+        <div>
+            <input id='POW_individual' type='radio' name='rtoggle' value='POW_individual'>
+            <label for='POW_individual'> Access to places of worship (With different colors)</label> 
+        </div>
+
+        
+        <div>
+        <label id="LL1">Building Analytics for the US (From <a href="https://github.com/Microsoft/USBuildingFootprints" target="_blank"> Microsoft</a>) </label> 
         
         <div>
             <input id='density' type='radio' name='rtoggle' value='density' checked='checked'>
@@ -52,32 +107,6 @@
             <label for='orient_v2'>Orientation along the second axis</label> 
         </div>
     </div>
-    
-    
-
-
-     <div>
-        <label>Building Analytics for the planet (Some random aspects)</label> 
-        <div>
-            <input id='transport' type='radio' name='rtoggle' value='transport'>
-            <label for='transport'>Access to transport infrastructure</label> 
-        </div>
-
-        <div>
-            <input id='POW' type='radio' name='rtoggle' value='POW'>
-            <label for='POW'> Access to places of worship (Heatmap)</label> 
-        </div>
-
-        <div>
-            <input id='POW_individual' type='radio' name='rtoggle' value='POW_individual'>
-            <label for='POW_individual'> Access to places of worship (With different colors)</label> 
-        </div>
-
-        <div>
-            <input id='buildings_OSM' type='radio' name='rtoggle' value='buildings_OSM'>
-            <label for='buildings_OSM'> All the buildings (From OpenStreetMap)</label> 
-        </div>
-
 
 
         <!-- <div>
@@ -118,7 +147,7 @@ var map = new mapboxgl.Map({
 
 map.addControl(new mapboxgl.AttributionControl({
         compact: false,
-        customAttribution: '<a href="https://twitter.com/sevamoo"> @Vahid Moosavi, ETHZ</a>  <a href="https://github.com/Microsoft/USBuildingFootprints"> @Microsoft</a>',
+        customAttribution: '<a href="https://twitter.com/sevamoo" target="_blank" > @Vahid Moosavi, ETHZ</a>  <a href="https://github.com/Microsoft/USBuildingFootprints" target="_blank"> @Microsoft</a>',
     }));
 
 map.addControl(new mapboxgl.NavigationControl());
