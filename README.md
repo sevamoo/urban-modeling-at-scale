@@ -1,8 +1,9 @@
 
 # Urban Analytics at the Scale of Planet
 [Vahid Moosavi](https://vahidmoosavi.com/)
+
 [@sevamoo](https://twitter.com/sevamoo)
-### 12 November 2018
+
 
 
 # TL;DR 
