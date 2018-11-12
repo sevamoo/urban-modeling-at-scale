@@ -4,7 +4,7 @@
 ### 12 November 2018
 
 
-# TLDR: 
+# TL;DR: 
 * See the final results here: [here](https://sevamoo.github.io/urban-modeling-at-scale/urbanmodeling.html)  
 * Read the instructions on how to make the whole pipeline here: https://sevamoo.github.io/urban-modeling-at-scale/
 * Jupyter notebooks are [here](https://github.com/sevamoo/urban-modeling-at-scale/blob/master/OSM_Buildings_Planet_POI_search_20181112.ipynb)
