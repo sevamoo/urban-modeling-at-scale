@@ -3,13 +3,13 @@
 [Vahid Moosavi](https://vahidmoosavi.com/)
 ### 12 November 2018
 
-```
+
 # TLDR: 
 * See the final results here: [here](https://sevamoo.github.io/urban-modeling-at-scale/urbanmodeling.html)  
 * Read the instructions on how to make the whole pipeline here: https://sevamoo.github.io/urban-modeling-at-scale/
 * Jupyter notebooks are [here](https://github.com/sevamoo/urban-modeling-at-scale/blob/master/OSM_Buildings_Planet_POI_search_20181112.ipynb)
 
-```
+
 
 ## Background
 Recently, I have been working on a new project on urban modeling at the scale of planet. In this project I have been using mainly open source data sources such as OpenStreetMap. As an initial part of this project I am focused on the issue of  urban density and diversity, where I am interested to analyze following attributes related to patterns of urban development:
